@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="SplatXR: an open-source Unity toolkit for building multi-layered XR (AR/VR) experiences with on-headset 3D Gaussian Splatting.">
+  <meta name="keywords" content="SplatXR, Gaussian Splatting, 3DGS, XR, AR, VR, Unity, Toolkit, Mixed Reality">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SplatXR — Multi-Layered XR with On-Headset 3D Gaussian Splatting</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="./static/css/theme.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/site.js"></script>
+</head>
+<body>
+
+<nav class="sx-nav">
+  <a class="sx-nav-brand" href="./index.html">
+    <img src="./static/images/favicon.svg" alt="SplatXR logo">
+    <span>SplatXR</span>
+  </a>
+  <button class="sx-nav-burger" aria-label="Toggle navigation">
+    <i class="fas fa-bars"></i>
+  </button>
+  <div class="sx-nav-links">
+    <a href="./docs/index.html">Documentation</a>
+    <a class="sx-nav-cta sx-tooltip" data-tooltip="Coming soon" href="https://github.com/splatxr/SplatXR" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-github"></i> Code
+    </a>
+  </div>
+</nav>
+
+<div class="sx-wip-banner">
+  <i class="fas fa-hammer"></i>
+  <span><strong>Work in progress</strong> &mdash; this site is still being built out, and the SplatXR code release is coming soon.</span>
+</div>
+
+<!-- Hero -->
+<header class="sx-hero">
+  <h1 class="sx-title">Splat<span class="sx-title-gradient">XR</span></h1>
+  <h2 class="sx-subtitle">A Toolkit for Multi-Layered Extended Reality via On-Headset 3D Gaussian Splatting</h2>
+
+  <div class="sx-authors">
+    <a href="https://cvachha.github.io/research-profile.html" target="_blank" rel="noopener noreferrer">Cyrus Vachha</a> &nbsp;&middot;&nbsp;
+    <a href="https://mkari.de/" target="_blank" rel="noopener noreferrer">Mohamed Kari</a> &nbsp;&middot;&nbsp;
+    <a href="https://parastooabtahi.com/" target="_blank" rel="noopener noreferrer">Parastoo Abtahi</a>
+  </div>
+  <div class="sx-affiliation">
+    Princeton University
+  </div>
+
+  <div class="sx-hero-links">
+    <a class="sx-btn sx-btn-outline sx-tooltip" data-tooltip="Coming soon" href="#" aria-disabled="true">
+      <i class="fas fa-file-pdf"></i> Paper
+    </a>
+    <a class="sx-btn sx-btn-primary sx-tooltip" data-tooltip="Coming soon" href="https://github.com/splatxr/SplatXR" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-github"></i> Code
+    </a>
+    <a class="sx-btn sx-btn-outline" href="./docs/index.html">
+      <i class="fas fa-book"></i> Documentation
+    </a>
+  </div>
+
+  <div class="sx-hero-badge"><i class="fas fa-cube"></i>&nbsp;Open-Source Unity Toolkit</div>
+</header>
+
+<!-- Teaser -->
+<section class="sx-teaser-section">
+  <video class="sx-teaser-video" autoplay muted loop controls playsinline>
+    <source src="./static/videos/splatxr_preview_reel_original.mp4" type="video/mp4">
+  </video>
+  <p class="sx-teaser-caption">
+    <strong>SplatXR</strong> is a Unity toolkit for authoring multi-layered XR experiences with 3D Gaussian Splatting &mdash; rendered, physically simulated, and blended with the real world, entirely on-headset.
+  </p>
+</section>
+
+<!-- Gallery -->
+<section class="sx-gallery">
+  <div class="sx-gallery-item">
+    <div class="sx-gallery-label">Renderer</div>
+    <video class="sx-gallery-img" autoplay muted loop playsinline aria-label="Splat Renderer building block">
+      <source src="./static/videos/square_preview_blocks/splat_renderer_square_preview.mp4" type="video/mp4">
+    </video>
+    <div class="sx-gallery-caption">On-headset rendering of Gaussian splats, from single objects to LoD-managed scenes.</div>
+  </div>
+  <div class="sx-gallery-item">
+    <div class="sx-gallery-label">Physics</div>
+    <video class="sx-gallery-img" autoplay muted loop playsinline aria-label="Splat Physics building block">
+      <source src="./static/videos/square_preview_blocks/splat_physics_square_preview.mp4" type="video/mp4">
+    </video>
+    <div class="sx-gallery-caption">Collision and physical interaction through mesh-augmented splats.</div>
+  </div>
+  <div class="sx-gallery-item">
+    <div class="sx-gallery-label">Effects</div>
+    <video class="sx-gallery-img" autoplay muted loop playsinline aria-label="Splat Effects building block">
+      <source src="./static/videos/square_preview_blocks/splat_effects_square_preview.mp4" type="video/mp4">
+    </video>
+    <div class="sx-gallery-caption">Shader-based particle effects &mdash; disintegration, radial reveal, and more.</div>
+  </div>
+  <div class="sx-gallery-item">
+    <div class="sx-gallery-label">Blending</div>
+    <video class="sx-gallery-img" autoplay muted loop playsinline aria-label="Splat Blending building block">
+      <source src="./static/videos/square_preview_blocks/splat_blending_square_preview.mp4" type="video/mp4">
+    </video>
+    <div class="sx-gallery-caption">Portal-like compositing between splat scenes and physical passthrough.</div>
+  </div>
+</section>
+
+<!-- Overview / Abstract -->
+<section class="sx-section" id="overview">
+  <span class="sx-eyebrow" style="display:block; text-align:center;">Overview</span>
+  <h2 class="sx-h2">A toolkit for AR/VR Gaussian Splatting</h2>
+  <p class="sx-lede">
+    Recent advances in Gaussian splatting, 3D foundation models, and video-passthrough mixed reality offer unprecedented fidelity for capturing and blending physical and virtual worlds. However, established XR methods rely on polygon-based pipelines that treat physical and digital environments as separate domains, making seamless integration across recent novel representations difficult. Because 3D Gaussian Splatting (3DGS) lacks traditional 3D geometry, it impedes standard graphics techniques necessary for cross-reality interactions, such as shadows or collisions.
+  </p>
+  <p class="sx-lede">
+    To translate these representations into useful interactions, we reconceptualize XR as a multi-layered reality of interacting primitives. Our system unites splats with the physical and digital world in a compositional structure that enables seamless transitions, allowing pixels and objects to move and interact across physical and digital boundaries. We implement this through <strong>SplatXR</strong>, a Unity toolkit providing building-block abstractions for 3DGS development &mdash; including a standalone renderer, splat-to-mesh reconstruction, and physics &mdash; installable directly through the Unity Package Manager.
+  </p>
+</section>
+
+<!-- Framework -->
+<section class="sx-section">
+  <span class="sx-eyebrow" style="display:block; text-align:center;">Cross-Reality XR Interactions</span>
+  <h2 class="sx-h2">Multi-Layered Reality</h2>
+
+  <div style="max-width: 50rem; margin: 0 auto;">
+    <video class="sx-teaser-video" autoplay muted loop controls playsinline>
+      <source src="./static/videos/multi_layer_reality_no_audio.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <p class="sx-teaser-caption" style="max-width: 42rem;">
+    We treat reality as a composite of interacting layers &mdash; physical passthrough, photorealistic splats, explicit geometry, invisible phantom structures for physics, and semantic understanding &mdash; that can transition, blend, and link with one another for seamless cross-reality interaction. 
+  </p>
+</section>
+
+<!-- Building Blocks -->
+<section class="sx-section" id="building-blocks">
+  <span class="sx-eyebrow" style="display:block; text-align:center;">Building Blocks</span>
+  <h2 class="sx-h2">Drop-in components, combined in the editor</h2>
+  <p class="sx-lede" style="text-align:center; max-width: 42rem; margin: 0 auto;">
+    Each building block is added from the SplatXR Building Blocks Panel and applied to splat GameObjects individually or in combination.
+  </p>
+  <div class="sx-blocks">
+    <a class="sx-card sx-block-card" href="./docs/building-blocks/renderer.html">
+      <img class="sx-block-img" src="./static/images/blocks_doc_links/renderer_block_editor.png" alt="Splat Renderer documentation preview">
+      <h3><i class="fas fa-eye"></i> Splat Renderer</h3>
+      <p>Core rendering component for displaying Gaussian splats with our stand-alone on-device rendering pipeline.</p>
+      <span class="sx-block-link">Read the docs&nbsp;&rarr;</span>
+    </a>
+    <a class="sx-card sx-block-card" href="./docs/building-blocks/physics.html">
+      <img class="sx-block-img" src="./static/images/blocks_doc_links/physics_block_editor.png" alt="Splat Physics documentation preview">
+      <h3><i class="fas fa-atom"></i> Splat Physics</h3>
+      <p>Generates collision meshes from Gaussian splats to enable rigid body dynamics and shadow casting.</p>
+      <span class="sx-block-link">Read the docs&nbsp;&rarr;</span>
+    </a>
+    <a class="sx-card sx-block-card" href="./docs/building-blocks/effects.html">
+      <img class="sx-block-img" src="./static/images/blocks_doc_links/effects_block_editor.png" alt="Splat Effects documentation preview">
+      <h3><i class="fas fa-wand-magic-sparkles"></i> Splat Effects</h3>
+      <p>Shader-based effects system for disintegration, radial reveal, and distortion on splat objects.</p>
+      <span class="sx-block-link">Read the docs&nbsp;&rarr;</span>
+    </a>
+    <a class="sx-card sx-block-card" href="./docs/building-blocks/blending.html">
+      <img class="sx-block-img" src="./static/images/blocks_doc_links/blending_block_editor.png" alt="Splat Blending documentation preview">
+      <h3><i class="fas fa-layer-group"></i> Splat Blending</h3>
+      <p>Creates portal effects where splat spaces are viewed through virtual windows blended with reality.</p>
+      <span class="sx-block-link">Read the docs&nbsp;&rarr;</span>
+    </a>
+  </div>
+</section>
+
+<!-- Get Started CTA -->
+<section class="sx-cta">
+  <div class="sx-cta-banner">
+    <p>Get started with developing using our Unity toolkit.</p>
+    <a class="sx-btn sx-btn-outline" href="./docs/index.html">
+      <i class="fas fa-rocket"></i> Start Building
+    </a>
+  </div>
+</section>
+
+<!-- Citation -->
+<section class="sx-section" id="citation">
+  <div class="sx-card" style="text-align:center;">
+    <h2 class="sx-h2" style="margin-bottom: 0.75rem;">Citation</h2>
+    <p class="sx-citation-note">A BibTeX citation for SplatXR's accompanying paper will be posted here once the paper is published.</p>
+  </div>
+</section>
+
+<footer class="sx-footer">
+  <div class="container">
+    <div class="sx-footer-links">
+      <a href="#">Paper</a>
+      <a href="https://github.com/splatxr/SplatXR" target="_blank" rel="noopener noreferrer">Code</a>
+      <a href="./docs/index.html">Documentation</a>
+    </div>
+    <p>
+      SplatXR is released as open-source software for the research and XR developer community.
+      This website is forked from the <a href="https://nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a> website and
+      <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener noreferrer">source code</a>, licensed under a
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

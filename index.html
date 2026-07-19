@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>SplatXR</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/theme.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <!--
+    ============================================================
+    SITE GATE — a minimal password prompt shown instead of the
+    real homepage while the project isn't ready to be public yet.
+
+    To disable: set SX_GATE_ENABLED to false below. The page will
+    redirect straight through to home.html (the real homepage),
+    no other changes needed. Flip it back to true to re-enable.
+
+    To change the password, edit SX_GATE_PASSWORD below.
+
+    This is a soft gate only (client-side, visible in page source)
+    to keep the site out of casual view — not real access control.
+
+    The real homepage content lives untouched in ./home.html.
+    ============================================================
+  -->
+  <script>
+    var SX_GATE_ENABLED = true;
+    var SX_GATE_PASSWORD = 'psilab';
+
+    if (!SX_GATE_ENABLED) {
+      window.location.replace('./home.html');
+    }
+  </script>
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: var(--sx-bg-gradient);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .sx-gate {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.1rem;
+    }
+
+    .sx-gate-title {
+      font-size: 2.25rem;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      color: var(--sx-text);
+      margin: 0;
+    }
+
+    .sx-gate-title span {
+      background: var(--sx-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .sx-gate-status {
+      margin: -0.6rem 0 0;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--sx-text-light);
+    }
+
+    .sx-gate-input {
+      width: 12rem;
+      padding: 0.5rem 0.8rem;
+      font-family: inherit;
+      font-size: 0.9rem;
+      text-align: center;
+      color: var(--sx-text);
+      background: transparent;
+      border: 1px solid rgba(255, 106, 61, 0.35);
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+
+    .sx-gate-input::placeholder { color: var(--sx-text-light); }
+    .sx-gate-input:focus { border-color: var(--sx-orange); }
+
+    .sx-gate-input.sx-gate-shake {
+      border-color: var(--sx-red-dark);
+      animation: sx-gate-shake 0.3s ease;
+    }
+
+    @keyframes sx-gate-shake {
+      25% { transform: translateX(-4px); }
+      75% { transform: translateX(4px); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="sx-gate">
+  <h1 class="sx-gate-title">Splat<span>XR</span></h1>
+  <p class="sx-gate-status">In progress &mdash; coming soon</p>
+  <input type="text" class="sx-gate-input" id="sx-gate-input" aria-label="Password" autocomplete="off" autocapitalize="off" spellcheck="false">
+</div>
+
+<script>
+  (function () {
+    var input = document.getElementById('sx-gate-input');
+    input.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter') return;
+      if (input.value.trim().toLowerCase() === SX_GATE_PASSWORD.toLowerCase()) {
+        window.location.href = './home.html';
+      } else {
+        input.classList.remove('sx-gate-shake');
+        void input.offsetWidth;
+        input.classList.add('sx-gate-shake');
+        input.value = '';
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>

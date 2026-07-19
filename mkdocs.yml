@@ -1,0 +1,69 @@
+site_name: SplatXR
+site_description: Documentation for SplatXR, an open-source Unity toolkit for multi-layered XR experiences with on-headset 3D Gaussian Splatting.
+site_url: https://splatxr.github.io/docs/
+
+docs_dir: docs_src
+site_dir: docs
+use_directory_urls: false
+
+repo_url: https://github.com/splatxr/SplatXR
+repo_name: splatxr/SplatXR
+
+extra:
+  homepage: ../index.html
+  generator: false
+
+theme:
+  name: material
+  custom_dir: overrides
+  favicon: assets/favicon.svg
+  logo: assets/favicon.svg
+  font:
+    text: Inter
+    code: Roboto Mono
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    scheme: default
+    primary: deep orange
+    accent: red
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - def_list
+  - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
+
+nav:
+  - Getting Started:
+      - Overview: index.md
+      - Installation: installation.md
+      - Quickstart: quickstart.md
+  - Building Blocks:
+      - Splat Renderer: building-blocks/renderer.md
+      - Splat Physics: building-blocks/physics.md
+      - Splat Effects: building-blocks/effects.md
+      - Splat Blending: building-blocks/blending.md
+  - Evaluation:
+      - Technical Evaluation Suite: technical-evaluation.md
+  - Reference:
+      - FAQ / Known Issues: faq.md

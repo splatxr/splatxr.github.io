@@ -1,0 +1,67 @@
+/* SplatXR brand overrides for mkdocs-material */
+
+:root {
+  --md-primary-fg-color: #e0293e;
+  --md-primary-fg-color--light: #ff6a3d;
+  --md-primary-fg-color--dark: #b71c2b;
+  --md-accent-fg-color: #ff6a3d;
+  --md-accent-fg-color--transparent: rgba(255, 106, 61, 0.1);
+  --md-default-bg-color: #fffaf6;
+}
+
+.md-header {
+  background: linear-gradient(135deg, #ff9558 0%, #ff5f3d 45%, #e0293e 100%);
+}
+
+/* Work-in-progress announcement bar, styled to match the homepage's banner */
+.md-banner {
+  background: rgba(255, 106, 61, 0.1);
+  color: var(--md-primary-fg-color--dark);
+  border-bottom: 1px solid rgba(224, 41, 62, 0.2);
+}
+
+.md-banner__inner {
+  font-weight: 500;
+}
+
+.md-banner strong { font-weight: 800; }
+
+.md-tabs {
+  background-color: var(--md-primary-fg-color--dark);
+}
+
+.md-nav__link--active,
+.md-nav__link:focus,
+.md-nav__link:hover {
+  color: var(--md-primary-fg-color);
+}
+
+/* The primary sidebar repeats the site title/logo and GitHub repo link that
+   are already in the header — hide them on desktop to free up sidebar height
+   so the nav doesn't need to scroll. Mobile keeps them (drawer needs them). */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary .md-nav__title,
+  .md-sidebar--primary .md-nav__source {
+    display: none;
+  }
+}
+
+/* Tag pills, e.g. version / platform badges */
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 106, 61, 0.08);
+  border: 1px solid rgba(224, 41, 62, 0.25);
+  color: var(--md-primary-fg-color--dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+}

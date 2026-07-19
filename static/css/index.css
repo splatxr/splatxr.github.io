@@ -33,13 +33,20 @@
   gap: 0.4rem;
   background: var(--sx-card-bg);
   border: 1px solid rgba(224, 41, 62, 0.28);
-  color: var(--sx-red-dark);
+  color: var(--sx-red-dark) !important;
   font-weight: 700;
   font-size: 0.82rem;
   letter-spacing: 0.03em;
   padding: 0.35rem 0.9rem;
   border-radius: 999px;
   margin-top: 1.8rem;
+  text-decoration: none !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sx-hero-badge:hover {
+  border-color: var(--sx-red-dark);
+  box-shadow: 0 4px 14px 0 rgba(224, 41, 62, 0.14);
 }
 
 .sx-hero h1.sx-title {

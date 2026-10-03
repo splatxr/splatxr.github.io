@@ -5,7 +5,7 @@
   <meta name="description" content="SplatXR: an open-source Unity toolkit for building multi-layered XR (AR/VR) experiences with on-headset 3D Gaussian Splatting.">
   <meta name="keywords" content="SplatXR, Gaussian Splatting, 3DGS, XR, AR, VR, Unity, Toolkit, Mixed Reality">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SplatXR — Multi-Layered XR with On-Headset 3D Gaussian Splatting</title>
+  <title>SplatXR: A Toolkit for Multi-Layered XR via On-Headset 3D Gaussian Splatting</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
@@ -43,6 +43,9 @@
 <div class="sx-wip-banner">
   <i class="fas fa-hammer"></i>
   <span><strong>Work in progress</strong> &mdash; this site is still being built out, and the SplatXR code release is coming soon.</span>
+  <a class="sx-btn sx-btn-outline sx-btn-small" href="https://forms.gle/Y7Q23x7jSvT1qWSh9" target="_blank" rel="noopener noreferrer">
+    <i class="fas fa-bell"></i> Get notified when SplatXR is released
+  </a>
 </div>
 
 <!-- Hero -->
@@ -60,14 +63,19 @@
   </div>
 
   <div class="sx-hero-links">
-    <a class="sx-btn sx-btn-outline sx-tooltip" data-tooltip="Coming soon" href="#" aria-disabled="true">
+    <a class="sx-btn sx-btn-outline" href="./static/paper/splatxr_uist26_paper.pdf" target="_blank" rel="noopener noreferrer">
       <i class="fas fa-file-pdf"></i> Paper
     </a>
     <a class="sx-btn sx-btn-primary sx-tooltip" data-tooltip="Coming soon" href="https://github.com/splatxr/SplatXR" target="_blank" rel="noopener noreferrer">
       <i class="fab fa-github"></i> Code
     </a>
+    <!-- Documentation button hidden for now; uncomment to restore.
     <a class="sx-btn sx-btn-outline" href="./docs/index.html">
       <i class="fas fa-book"></i> Documentation
+    </a>
+    -->
+    <a class="sx-btn sx-btn-outline" href="https://forms.gle/Y7Q23x7jSvT1qWSh9" target="_blank" rel="noopener noreferrer">
+      <i class="fas fa-bell"></i> Notify me on release
     </a>
   </div>
 
@@ -183,7 +191,7 @@
 <section class="sx-cta">
   <div class="sx-cta-banner">
     <p>Get started with developing using our Unity toolkit.</p>
-    <a class="sx-btn sx-btn-outline" href="./docs/index.html">
+    <a class="sx-btn sx-btn-outline sx-btn-disabled sx-tooltip" data-tooltip="Coming soon" aria-disabled="true">
       <i class="fas fa-rocket"></i> Start Building
     </a>
   </div>
@@ -193,19 +201,33 @@
 <section class="sx-section" id="citation">
   <div class="sx-card" style="text-align:center;">
     <h2 class="sx-h2" style="margin-bottom: 0.75rem;">Citation</h2>
-    <p class="sx-citation-note">A BibTeX citation for SplatXR's accompanying paper will be posted here once the paper is published.</p>
+    <div class="sx-bibtex-wrap">
+    <button class="sx-copy-btn" type="button" aria-label="Copy citation">
+      <i class="far fa-copy"></i> <span>Copy</span>
+    </button>
+    <pre class="sx-bibtex"><code>@inproceedings{vachha2026splatxr,
+author = {Vachha, Cyrus and Kari, Mohamed and Abtahi, Parastoo},
+title = {SplatXR: A Toolkit for Multi-Layered Extended Reality via On-Headset 3D Gaussian Splatting},
+year = {2026},
+publisher = {Association for Computing Machinery},
+url = {https://doi.org/10.1145/3830398.3830681},
+doi = {10.1145/3830398.3830681},
+booktitle = {Proceedings of the 39th Annual ACM Symposium on User Interface Software and Technology},
+series = {UIST '26}
+}</code></pre>
+    </div>
   </div>
 </section>
 
 <footer class="sx-footer">
   <div class="container">
     <div class="sx-footer-links">
-      <a href="#">Paper</a>
+      <a href="./static/paper/splatxr_uist26_paper.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
       <a href="https://github.com/splatxr/SplatXR" target="_blank" rel="noopener noreferrer">Code</a>
       <a href="./docs/index.html">Documentation</a>
     </div>
     <p>
-      SplatXR is released as open-source software for the research and XR developer community.
+      SplatXR is released as an MIT licensed open-source software for the research and XR developer community.
       This website is forked from the <a href="https://nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a> website and
       <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener noreferrer">source code</a>, licensed under a
       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.

@@ -292,3 +292,39 @@
   color: var(--sx-text-light);
   font-size: 0.95rem;
 }
+
+.sx-bibtex {
+  background: #f3f3f3;
+  color: var(--sx-text);
+  border: 1px solid #e2e2e2;
+  text-align: left;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.sx-bibtex-wrap { position: relative; }
+
+.sx-copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  font: inherit;
+  font-size: 0.75rem;
+  color: var(--sx-text-light);
+  background: #fff;
+  border: 1px solid #d6d6d6;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.sx-copy-btn:hover {
+  color: var(--sx-red-dark);
+  border-color: var(--sx-red-dark);
+}

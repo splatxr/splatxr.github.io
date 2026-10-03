@@ -7,4 +7,15 @@ document.addEventListener('DOMContentLoaded', function () {
       links.classList.toggle('is-active');
     });
   }
+
+  document.querySelectorAll('.sx-copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var code = btn.parentElement.querySelector('pre code');
+      var label = btn.querySelector('span');
+      navigator.clipboard.writeText(code.textContent).then(function () {
+        label.textContent = 'Copied!';
+        setTimeout(function () { label.textContent = 'Copy'; }, 1500);
+      });
+    });
+  });
 });

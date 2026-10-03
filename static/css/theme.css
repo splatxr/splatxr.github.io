@@ -149,6 +149,9 @@ a:hover { color: var(--sx-orange-dark); }
 
 .sx-btn-small { padding: 0.5rem 1.1rem; font-size: 0.9rem; }
 
+.sx-btn-disabled { cursor: default; }
+.sx-btn-disabled:hover { transform: none; border-color: rgba(224, 41, 62, 0.28); box-shadow: none; }
+
 /* ---------- Tooltip ---------- */
 .sx-tooltip { position: relative; }
 

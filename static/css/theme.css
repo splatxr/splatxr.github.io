@@ -155,6 +155,11 @@ a:hover { color: var(--sx-orange-dark); }
 /* ---------- Tooltip ---------- */
 .sx-tooltip { position: relative; }
 
+/* Lift the hovered element so its tooltip isn't hidden by later siblings
+   (the hover transform on .sx-btn traps the pseudo-element's z-index). */
+.sx-tooltip:hover,
+.sx-tooltip:focus-visible { z-index: 30; }
+
 .sx-tooltip::after {
   content: attr(data-tooltip);
   position: absolute;

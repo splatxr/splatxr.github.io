@@ -411,6 +411,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#citation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Citation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contributors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contributors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paper
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#acknowledgements" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -418,6 +452,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -920,6 +959,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#citation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Citation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contributors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contributors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paper
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#acknowledgements" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -927,6 +1000,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -961,16 +1039,15 @@
 <ul>
 <li><strong>Rendering layer</strong> — GPU-optimized, on-headset visualization of Gaussian splats.</li>
 <li><strong>Physics layer</strong> — collision detection and physical interaction through mesh-augmented splats.</li>
-<li><strong>Effects layer</strong> — visual enhancements like disintegration and distortion.</li>
+<li><strong>Effects layer</strong> — visual enhancements like disintegration and digital rain.</li>
 <li><strong>Blending layer</strong> — portal-like effects and compositing between virtual splat scenes and real spaces.</li>
 </ul>
 <p>Building blocks can be accessed through the <strong>SplatXR Building Blocks Panel</strong> (<code>SplatXR &gt; Building Blocks Panel</code>) and applied to splat GameObjects individually or in combination.</p>
 <h2 id="platform-support">Platform Support<a class="headerlink" href="#platform-support" title="Permanent link">&para;</a></h2>
-<p>SplatXR primarily targets and is developed for the <strong>Meta Quest 3</strong>. It has also been tested on <strong>Apple Vision Pro</strong> and <strong>Samsung Galaxy XR</strong>. It will likely work on other Unity-based XR headsets, but those haven't been tested yet.</p>
+<p>SplatXR primarily targets and is developed for the <strong>Meta Quest 3</strong>. It has also been tested on <strong>Apple Vision Pro</strong>. It will likely work on other Unity-based XR headsets. We welcome contributions for support on other AR/VR platforms.</p>
 <div class="tag-row">
-<p><span class="tag-pill">Meta Quest 3 — primary target</span>
-<span class="tag-pill">Apple Vision Pro — tested</span>
-<span class="tag-pill">Samsung Galaxy XR — tested</span></p>
+<p><span class="tag-pill">Meta Quest 3 — fully supported</span>
+<span class="tag-pill">Apple Vision Pro — tested</span></p>
 </div>
 <h2 id="get-started">Get Started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
 <div class="grid cards">
@@ -1009,7 +1086,7 @@
 <li>
 <p><strong><a href="building-blocks/effects.html">Splat Effects</a></strong></p>
 <hr />
-<p>Disintegrate, radial reveal, and distortion shader effects.</p>
+<p>Disintegrate, radial reveal, and digital rain shader effects.</p>
 </li>
 <li>
 <p><strong><a href="building-blocks/blending.html">Splat Blending</a></strong></p>
@@ -1026,7 +1103,24 @@
 <li>Answer questions and help triage issues on GitHub.</li>
 </ul>
 <p>Head over to the <a href="https://github.com/splatxr/SplatXR">SplatXR repository</a> to open an issue, start a discussion, or submit a pull request.</p>
-<h2 id="acknowledgements">Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permanent link">&para;</a></h2>
+<h2 id="citation">Citation<a class="headerlink" href="#citation" title="Permanent link">&para;</a></h2>
+<p>If you use the SplatXR Toolkit in your research, please cite our <a href="https://splatxr.github.io/static/paper/splatxr_uist26_paper.pdf">paper</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">vachha2026splatxr</span><span class="p">,</span>
+<span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Vachha, Cyrus and Kari, Mohamed and Abtahi, Parastoo}</span><span class="p">,</span>
+<span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{SplatXR: A Toolkit for Multi-Layered Extended Reality via On-Headset 3D Gaussian Splatting}</span><span class="p">,</span>
+<span class="na">year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2026}</span><span class="p">,</span>
+<span class="na">publisher</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Association for Computing Machinery}</span><span class="p">,</span>
+<span class="na">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{https://doi.org/10.1145/3830398.3830681}</span><span class="p">,</span>
+<span class="na">doi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{10.1145/3830398.3830681}</span><span class="p">,</span>
+<span class="na">booktitle</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{Proceedings of the 39th Annual ACM Symposium on User Interface Software and Technology}</span><span class="p">,</span>
+<span class="na">series</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{UIST &#39;26}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h2>
+<h3 id="paper">Paper<a class="headerlink" href="#paper" title="Permanent link">&para;</a></h3>
+<p>SplatXR is described in our UIST 2026 paper, <a href="https://splatxr.github.io/static/paper/splatxr_uist26_paper.pdf"><em>SplatXR: A Toolkit for Multi-Layered Extended Reality via On-Headset 3D Gaussian Splatting</em></a>, by Cyrus Vachha, Mohamed Kari, and Parastoo Abtahi.</p>
+<p>Corresponding author: Cyrus Vachha (cvachha[at]princeton.edu).</p>
+<h3 id="acknowledgements">Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permanent link">&para;</a></h3>
 <p>We thank <a href="https://www.cs.princeton.edu/~smr/">Szymon Rusinkiewicz</a> for advice and assistance with the object meshing algorithm, Simon Bethke for providing the <a href="https://www.kaggle.com/datasets/simonbethke/botanical-garden-america">botanical garden dataset</a>, and members of the PSI Lab for their advice. This research was supported by the Princeton NextG Innovation Grant.</p>
 
 

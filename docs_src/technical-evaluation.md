@@ -1,28 +1,13 @@
 # Technical Evaluation Suite
 
-SplatXR ships with a companion evaluation suite used to benchmark the toolkit across a range of splat types and scene conditions on standalone headsets.
-
 <div class="tag-row" markdown>
 <span class="tag-pill">Standalone Meta Quest 3</span>
-<span class="tag-pill">4 evaluation components</span>
 </div>
 
-## What the suite covers
+SplatXR comes with a companion evaluation suite for benchmarking the toolkit on standalone headsets. Its main focus is the runtime renderer: it measures rendering performance across splat objects, indoor scenes, and outdoor scenes at multiple splat counts and viewpoints. The suite also times splat import, splat-to-mesh conversion, and on-headset object reconstruction.
 
-The evaluation suite exercises four components of the toolkit end to end:
+All benchmarks were run on-device on a standalone Meta Quest 3 across repeated trials. Detailed methodology and results are reported in the [paper](https://splatxr.github.io/static/paper/splatxr_uist26_paper.pdf).
 
-- **Runtime renderer** — performance across splat objects, indoor scenes, and outdoor scenes at multiple splat counts and viewpoints.
-- **Splat-to-mesh conversion** — meshing time for both the Object and Space algorithms.
-- **Splat import** — import and CSV conversion time for loading raw splat files into SplatXR-ready assets.
-- **Object reconstruction** — end-to-end timing for the on-headset capture-to-splat reconstruction pipeline.
+The evaluation suite will be open-source and available soon, so you can reproduce these benchmarks or run them on your own splats and hardware.
 
-All benchmarks were run on-device on a standalone Meta Quest 3 across repeated trials to check reproducibility and robustness.
-
-!!! note "Full results are in the paper"
-    Detailed metrics, methodology, and results tables for each component are reported in the accompanying paper rather than duplicated here.
-
-## Run it yourself
-
-The evaluation suite is open-source and available separately from the main toolkit repository, so you can reproduce these benchmarks or run them against your own splats and hardware.
-
-[:fontawesome-brands-github: splatxr/splatxr-evals](https://github.com/splatxr/splatxr-evals){ .md-button .md-button--primary }
+<span class="md-button md-button--disabled" markdown="1">:fontawesome-brands-github: splatxr/splatxr-evals · Coming soon</span>

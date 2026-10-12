@@ -39,7 +39,7 @@
   letter-spacing: 0.03em;
   padding: 0.35rem 0.9rem;
   border-radius: 999px;
-  margin-top: 1.8rem;
+  margin-top: 1.1rem;
   text-decoration: none !important;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
@@ -88,7 +88,7 @@
 .sx-affiliation {
   font-size: 0.95rem;
   color: var(--sx-text-light);
-  margin-bottom: 1.8rem;
+  margin-bottom: 0.5rem;
 }
 
 .sx-hero-links {
@@ -97,7 +97,15 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin-top: 1.6rem;
+  margin-top: 1.1rem;
+}
+
+.sx-venue {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sx-red-dark);
+  letter-spacing: 0.03em;
+  margin-bottom: 1.1rem;
 }
 
 /* ---------- Teaser ---------- */

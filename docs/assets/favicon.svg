@@ -7,8 +7,5 @@
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="16" fill="url(#sxGrad)"/>
-  <ellipse cx="24" cy="26" rx="12" ry="9" fill="#ffffff" opacity="0.95"/>
-  <ellipse cx="42" cy="22" rx="7" ry="5.5" fill="#ffffff" opacity="0.75"/>
-  <ellipse cx="40" cy="42" rx="14" ry="10" fill="#ffffff" opacity="0.85"/>
-  <ellipse cx="18" cy="46" rx="6" ry="4.5" fill="#ffffff" opacity="0.6"/>
+  <path fill="#ffffff" transform="translate(32 32.5) scale(0.92) translate(-32 -32.5)" d="M32 21.4 C42 21.4 50 21.8 52.5 25.5 C54.5 28.8 54.5 35.4 52.5 38.7 C50.5 42.3 46 43.6 41 43.6 C37.5 43.6 36.5 41.5 35.5 39.9 C34.5 38.2 33.5 37.4 32 37.4 C30.5 37.4 29.5 38.2 28.5 39.9 C27.5 41.5 26.5 43.6 23 43.6 C18 43.6 13.5 42.3 11.5 38.7 C9.5 35.4 9.5 28.8 11.5 25.5 C14 21.8 22 21.4 32 21.4 Z"/>
 </svg>

@@ -9,8 +9,8 @@ Generates collision meshes from Gaussian splats to enable physics interactions, 
 
 ![Splat Physics Block](../images/physics_block_editor.png)
 
-!!! note
-    Temporary screenshot. Will be replaced with a dedicated Splat Physics screenshot.
+!!! warning "Requires the meshing tool"
+    This building block needs the SplatXR meshing tool. See [Installation](../installation.md#meshing-tool) for the macOS and Windows downloads.
 
 ## Purpose
 
@@ -20,7 +20,7 @@ Apply this building block to an existing splat renderer object when you need col
 
 | Parameter | Description |
 | --- | --- |
-| Target Splat | Existing splat GameObject with a Splat Renderer component. |
+| Target Splat | Existing splat GameObject created by the Splat Renderer building block. You can select the parent object or its `splat_renderer` child; physics is always added to the parent. |
 | Splat Type | **Object** (detailed mesh for props/items) or **Space** (simplified mesh for rooms/environments). |
 | Mesh Threshold | *(Object type)* Density threshold for mesh generation. Range 0–1, default `0.5`. |
 | Gaussian Mesh Scale | *(Object type)* Scale factor for individual gaussians during meshing. Larger values help for sparser gaussians. Range 0–2, default `1.5`. |
@@ -31,6 +31,8 @@ Apply this building block to an existing splat renderer object when you need col
 ## Usage
 
 **Object** meshing creates more detailed meshes suitable for interactive props, while **Space** meshing creates simplified meshes for environment boundaries.
+
+The physics mesh, collider, and Rigidbody go on the splat's parent object, not on the `splat_renderer` child that draws it. Adding a mesh to the child would replace the splat's own mesh and hide it. If you select the child, the block moves the physics to its parent and logs a message. If the selected object draws the splat and has no parent, the block shows an error instead. In that case, recreate the splat with the Splat Renderer building block.
 
 !!! warning "Known limitation"
     Scene-based meshing (Splat Type: Space) may not produce highly detailed meshes. For objects requiring detailed collision meshes, use Splat Type: Object instead. See the [FAQ](../faq.md).

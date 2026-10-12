@@ -13,19 +13,18 @@ SplatXR accelerates prototyping and research for XR experiences that leverage 3D
 
 - **Rendering layer** — GPU-optimized, on-headset visualization of Gaussian splats.
 - **Physics layer** — collision detection and physical interaction through mesh-augmented splats.
-- **Effects layer** — visual enhancements like disintegration and distortion.
+- **Effects layer** — visual enhancements like disintegration and digital rain.
 - **Blending layer** — portal-like effects and compositing between virtual splat scenes and real spaces.
 
 Building blocks can be accessed through the **SplatXR Building Blocks Panel** (`SplatXR > Building Blocks Panel`) and applied to splat GameObjects individually or in combination.
 
 ## Platform Support
 
-SplatXR primarily targets and is developed for the **Meta Quest 3**. It has also been tested on **Apple Vision Pro** and **Samsung Galaxy XR**. It will likely work on other Unity-based XR headsets, but those haven't been tested yet.
+SplatXR primarily targets and is developed for the **Meta Quest 3**. It has also been tested on **Apple Vision Pro**. It will likely work on other Unity-based XR headsets. We welcome contributions for support on other AR/VR platforms.
 
 <div class="tag-row" markdown>
-<span class="tag-pill">Meta Quest 3 — primary target</span>
+<span class="tag-pill">Meta Quest 3 — fully supported</span>
 <span class="tag-pill">Apple Vision Pro — tested</span>
-<span class="tag-pill">Samsung Galaxy XR — tested</span>
 </div>
 
 ## Get Started
@@ -74,7 +73,7 @@ Jump into a specific building block to see its parameters and usage:
 
     ---
 
-    Disintegrate, radial reveal, and distortion shader effects.
+    Disintegrate, radial reveal, and digital rain shader effects.
 
 -   **[Splat Blending](building-blocks/blending.md)**
 
@@ -94,6 +93,31 @@ We welcome contributions from the community! Technical support and maintenance f
 
 Head over to the [SplatXR repository](https://github.com/splatxr/SplatXR) to open an issue, start a discussion, or submit a pull request.
 
-## Acknowledgements
+## Citation
+
+If you use the SplatXR Toolkit in your research, please cite our [paper](https://splatxr.github.io/static/paper/splatxr_uist26_paper.pdf):
+
+```bibtex
+@inproceedings{vachha2026splatxr,
+author = {Vachha, Cyrus and Kari, Mohamed and Abtahi, Parastoo},
+title = {SplatXR: A Toolkit for Multi-Layered Extended Reality via On-Headset 3D Gaussian Splatting},
+year = {2026},
+publisher = {Association for Computing Machinery},
+url = {https://doi.org/10.1145/3830398.3830681},
+doi = {10.1145/3830398.3830681},
+booktitle = {Proceedings of the 39th Annual ACM Symposium on User Interface Software and Technology},
+series = {UIST '26}
+}
+```
+
+## Contributors
+
+### Paper
+
+SplatXR is described in our UIST 2026 paper, [*SplatXR: A Toolkit for Multi-Layered Extended Reality via On-Headset 3D Gaussian Splatting*](https://splatxr.github.io/static/paper/splatxr_uist26_paper.pdf), by Cyrus Vachha, Mohamed Kari, and Parastoo Abtahi.
+
+Corresponding author: Cyrus Vachha (cvachha[at]princeton.edu).
+
+### Acknowledgements
 
 We thank [Szymon Rusinkiewicz](https://www.cs.princeton.edu/~smr/) for advice and assistance with the object meshing algorithm, Simon Bethke for providing the [botanical garden dataset](https://www.kaggle.com/datasets/simonbethke/botanical-garden-america), and members of the PSI Lab for their advice. This research was supported by the Princeton NextG Innovation Grant.

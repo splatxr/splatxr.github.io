@@ -568,6 +568,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -586,6 +597,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#writing-a-custom-effect-shader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing a custom effect shader
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -845,6 +873,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -863,6 +902,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#writing-a-custom-effect-shader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Writing a custom effect shader
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -887,18 +943,30 @@
 
 
 <h1 id="splat-effects">Splat Effects<a class="headerlink" href="#splat-effects" title="Permanent link">&para;</a></h1>
-<p>Visual effects system for applying shader-based effects to Gaussian splats, including disintegration, radial reveal, and distortion.</p>
+<p>Visual effects system for applying shader-based effects to Gaussian splats, including disintegration, radial reveal, and digital rain.</p>
 <div class="tag-row">
 <p><span class="tag-pill">Effects layer</span>
 <span class="tag-pill">Requires Splat Renderer</span></p>
 </div>
 <p><img alt="Splat Effects Block" src="../images/effects_block_editor.png" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Temporary screenshot. Will be replaced with a dedicated Splat Effects screenshot.</p>
-</div>
 <h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
 <p>Add this building block to the parent splat GameObject to create dynamic visual effects. Useful for transitions, interactions, or stylized appearances.</p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<div class="video-grid">
+<figure>
+<video autoplay muted loop playsinline aria-label="Disintegrate effect: a potted plant assembles from particles on a table, then disintegrates">
+<source src="../videos/effects_disintegrate.mp4" type="video/mp4">
+</video>
+<figcaption><strong>Disintegrate</strong>: a plant assembles from particles, then breaks apart.</figcaption>
+</figure>
+<figure>
+<video autoplay muted loop playsinline aria-label="Digital Rain effect: green splats rain down and assemble into a room">
+<source src="../videos/effects_digital_rain.mp4" type="video/mp4">
+</video>
+<figcaption><strong>Digital Rain</strong>: splats rain down and assemble into a room.</figcaption>
+</figure>
+</div>
+
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -910,16 +978,51 @@
 <tbody>
 <tr>
 <td>Target Splat</td>
-<td>GameObject with a Splat Renderer component to apply effects to.</td>
+<td>The parent splat GameObject created by the Splat Renderer building block (the one with the <code>splat_renderer</code> child).</td>
 </tr>
 <tr>
 <td>Effect Selection</td>
-<td><strong>Disintegrate</strong> — particle-based disintegration effect.<br><strong>Radial Reveal</strong> — spherical reveal/hide effect from a point.<br><strong>Distortion</strong> — spatial distortion effect.<br><strong>Custom Effect</strong> — placeholder for custom shader effects.</td>
+<td><strong>Disintegrate</strong>: particle-based disintegration effect.<br><strong>Radial Reveal</strong>: spherical reveal/hide effect from a point.<br><strong>Digital Rain</strong>: splats rain down and assemble into the object.<br><strong>Custom Shader</strong>: use your own effect shader.</td>
+</tr>
+<tr>
+<td>Custom Shader</td>
+<td><em>(Custom Shader only)</em> The shader to apply. Required when Custom Shader is selected.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<p>Effects modify the material shader on the splat renderer to achieve the visual changes. A controller script is added to the splat object, allowing for looping or specifying the timestep of the effect — each shader runs the effect across a timeline from <code>0</code> to <code>1</code>.</p>
+<p>The block swaps the shader on the <code>splat_renderer</code> child's material for the effect shader, and adds a <code>SplatEffectsBuildingBlock</code> component to the parent object. The effect starts off.</p>
+<p>Each effect runs across a timeline from <code>0</code> to <code>1</code>. Control it from the <code>SplatEffectsBuildingBlock</code> component in the Inspector:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Is Effect Active</td>
+<td>Turn on to play the effect, off to stop it.</td>
+</tr>
+<tr>
+<td>Time Multiplier</td>
+<td>Playback speed. At <code>1</code>, the effect takes 1 second from start to end.</td>
+</tr>
+<tr>
+<td>Loop Effect</td>
+<td>Restart from <code>0</code> after reaching <code>1</code>. Otherwise the effect holds at <code>1</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>From a script, call <code>StartEffect()</code>, <code>StopEffect()</code>, <code>SetTime(float)</code> (clamped to <code>0</code>–<code>1</code>), and <code>SetLoop(bool)</code>.</p>
+<h3 id="writing-a-custom-effect-shader">Writing a custom effect shader<a class="headerlink" href="#writing-a-custom-effect-shader" title="Permanent link">&para;</a></h3>
+<p>Each frame the component sets two material properties, which your shader should declare:</p>
+<ul>
+<li><code>_EffectActive</code>: <code>1</code> while the effect is playing, otherwise <code>0</code>.</li>
+<li><code>_EffectTime</code>: the current position on the <code>0</code>–<code>1</code> timeline.</li>
+</ul>
+<p>Start from one of the built-in shaders in <code>Runtime/SplatXRBuildingBlocks/Effects/Shaders</code> so your shader keeps the splat rendering code.</p>
 
 
 

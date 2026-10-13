@@ -61,6 +61,9 @@ Select the material (or the `splat_renderer` child) to adjust its photometric pr
 
 The shader applies them in this order: color correction (below), tint, temperature, saturation, then contrast and brightness.
 
+!!! note "Fixing draw order between splats"
+    Splats within one object are sorted automatically, but separate splat objects (and other transparent objects) are drawn in the order of their material's **Render Queue**. If one splat incorrectly shows through or covers another, change the **Render Queue** at the bottom of the splat material's Inspector. Materials with a higher value are drawn later, on top of lower ones. New splat materials start at `3001`, just after Unity's default transparent queue (`3000`).
+
 ### Auto color correction with passthrough
 
 A splat captured at a different time or under different lighting often looks off next to the real room seen through passthrough. The **Splat Passthrough Color Adjustment** component (`SplatPassthroughColorAdjustment`) matches the splat's colors to the real environment.

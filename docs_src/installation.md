@@ -14,8 +14,12 @@
 !!! warning "Install the meshing tool"
     The [Splat Physics](building-blocks/physics.md) building block needs the SplatXR meshing tool to generate collision meshes. Install it for your platform:
 
-    - **macOS:** *link coming soon (TBD)*
-    - **Windows:** *link coming soon (TBD)*
+    - **macOS:** [Download the meshing tool for macOS](https://drive.google.com/file/d/1HcbgEvabz1hrLTOPidq_c2t-kNgfDNCt/view?usp=drive_link)
+    - **Windows:** [Download the meshing tool for Windows](https://drive.google.com/file/d/1o79mp9qj--IrdOHeU5jvdInDghc1MwYs/view?usp=drive_link)
+
+    Place the downloaded file in the toolkit's `SplatXRPlugin/Runtime/SplatXRBuildingBlocks/Physics` folder, and keep its file name: `splatxr_meshing.exe` on Windows or `splatxr_meshing_mac` on macOS. You can also put it directly in your project's `Assets` folder.
+
+    **macOS security warning:** the first time the tool runs, macOS may block it because it's from an unidentified developer. Go to **System Settings > Privacy & Security**, scroll to the message about `splatxr_meshing_mac`, and click **Open Anyway**. Then run the Splat Physics block again.
 
 !!! tip "Next"
     Head to the [Quickstart](quickstart.md) to import your first Gaussian splat.

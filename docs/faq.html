@@ -789,6 +789,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#splats-drawing-in-the-wrong-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Splats drawing in the wrong order
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -864,6 +875,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#splats-drawing-in-the-wrong-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Splats drawing in the wrong order
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -896,6 +918,8 @@
 <p>When viewing splats in the Unity editor, it's recommended to enable the <strong>"Remove Outline"</strong> option in the in-editor viewer for better rendering performance while selecting the splat in the editor.</p>
 <h3 id="scene-based-meshing-detail">Scene-based meshing detail<a class="headerlink" href="#scene-based-meshing-detail" title="Permanent link">&para;</a></h3>
 <p>Scene-based meshing (when using Splat Type: <strong>Space</strong> in physics generation) may not produce highly detailed meshes. For objects requiring detailed collision meshes, use Splat Type: <strong>Object</strong> instead.</p>
+<h3 id="splats-drawing-in-the-wrong-order">Splats drawing in the wrong order<a class="headerlink" href="#splats-drawing-in-the-wrong-order" title="Permanent link">&para;</a></h3>
+<p>Splats within one object are sorted automatically, but separate splat objects (and other transparent objects) are drawn in the order of their material's <strong>Render Queue</strong>. If one splat incorrectly shows through or covers another, change the <strong>Render Queue</strong> at the bottom of the splat material's Inspector. Materials with a higher value are drawn later, on top of lower ones. New splat materials start at <code>3001</code>. See <a href="building-blocks/renderer.html#material-and-color-controls">Splat Renderer</a> for more on splat materials.</p>
 <div class="admonition warning">
 <p class="admonition-title">Camera distance and performance</p>
 <p>Avoid keeping the camera/headset extremely close to splat surfaces/objects — close proximity can cause rendering slowdowns and stuttering due to the high density of splats being processed. Maintain a reasonable viewing distance from splat objects for optimal performance.</p>

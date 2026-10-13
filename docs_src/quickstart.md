@@ -2,6 +2,9 @@
 
 To quickly import a Gaussian splat into your Unity scene:
 
+!!! info "Optional: sample splat"
+    Don't have a splat yet? [Download a sample splat](https://drive.google.com/file/d/1vnjUp28Bc0bHDxxsEZJUdq6GSRq-ivU0/view?usp=sharing) to try these steps with.
+
 1. Open **SplatXR > Building Blocks Panel** from the Unity menu.
 2. Select the **Splat Renderer** building block from the panel.
 3. In the **Object Name** field, enter a name for your splat object.

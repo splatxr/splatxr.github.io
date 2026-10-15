@@ -12,7 +12,7 @@
 <a id="meshing-tool"></a>
 
 !!! warning "Install the meshing tool"
-    The [Splat Physics](building-blocks/physics.md) building block needs the SplatXR meshing tool to generate collision meshes. Install it for your platform:
+    The [Splat Physics](building-blocks/physics.md) building block needs the SplatXR meshing tool to generate collision meshes. The tool may already be bundled in the release: check for `splatxr_meshing.exe` (Windows) or `splatxr_meshing_mac` (macOS) in the toolkit's `SplatXRPlugin/Runtime/SplatXRBuildingBlocks/Physics` folder. If it isn't there, download it for your platform:
 
     - **macOS:** [Download the meshing tool for macOS](https://drive.google.com/file/d/1HcbgEvabz1hrLTOPidq_c2t-kNgfDNCt/view?usp=drive_link)
     - **Windows:** [Download the meshing tool for Windows](https://drive.google.com/file/d/1o79mp9qj--IrdOHeU5jvdInDghc1MwYs/view?usp=drive_link)

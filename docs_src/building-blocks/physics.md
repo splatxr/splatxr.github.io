@@ -10,7 +10,7 @@ Generates collision meshes from Gaussian splats to enable physics interactions, 
 ![Splat Physics Block](../images/physics_block_editor.png)
 
 !!! warning "Requires the meshing tool"
-    This building block needs the SplatXR meshing tool. See [Installation](../installation.md#meshing-tool) for the macOS and Windows downloads.
+    This building block needs the SplatXR meshing tool. It may be bundled in the release; if not, see [Installation](../installation.md#meshing-tool) for the macOS and Windows downloads.
 
 ## Purpose
 

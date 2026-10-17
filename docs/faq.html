@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://splatxr.github.io/docs/faq.html">
       
       
-        <link rel="prev" href="technical-evaluation.html">
+        <link rel="prev" href="building-blocks/blending.html">
       
       
       
@@ -553,93 +553,6 @@
       
   
   
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Evaluation
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Evaluation
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="technical-evaluation.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Technical Evaluation Suite
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -658,10 +571,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -679,8 +592,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -800,6 +713,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#splats-look-unsorted-in-the-game-view-while-editing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Splats look unsorted in the Game view while editing
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -886,6 +810,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#splats-look-unsorted-in-the-game-view-while-editing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Splats look unsorted in the Game view while editing
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -913,13 +848,20 @@
 <li>Decimating your source splat data.</li>
 <li>Using the LoD Renderer to swap lower-detail versions at distance.</li>
 </ul>
-<p>The limitation is primarily the number/FOV/layering of visible splats in a scene's rendered view. Further optimizations are under development.</p>
+<p>The limitation is primarily the number/FOV/layering of visible splats in a scene's rendered view.</p>
 <h3 id="possible-slow-down-in-in-editor-viewing">Possible slow-down in in-editor viewing<a class="headerlink" href="#possible-slow-down-in-in-editor-viewing" title="Permanent link">&para;</a></h3>
 <p>When viewing splats in the Unity editor, it's recommended to enable the <strong>"Remove Outline"</strong> option in the in-editor viewer for better rendering performance while selecting the splat in the editor.</p>
 <h3 id="scene-based-meshing-detail">Scene-based meshing detail<a class="headerlink" href="#scene-based-meshing-detail" title="Permanent link">&para;</a></h3>
 <p>Scene-based meshing (when using Splat Type: <strong>Space</strong> in physics generation) may not produce highly detailed meshes. For objects requiring detailed collision meshes, use Splat Type: <strong>Object</strong> instead.</p>
 <h3 id="splats-drawing-in-the-wrong-order">Splats drawing in the wrong order<a class="headerlink" href="#splats-drawing-in-the-wrong-order" title="Permanent link">&para;</a></h3>
 <p>Splats within one object are sorted automatically, but separate splat objects (and other transparent objects) are drawn in the order of their material's <strong>Render Queue</strong>. If one splat incorrectly shows through or covers another, change the <strong>Render Queue</strong> at the bottom of the splat material's Inspector. Materials with a higher value are drawn later, on top of lower ones. New splat materials start at <code>3001</code>. See <a href="building-blocks/renderer.html#material-and-color-controls">Splat Renderer</a> for more on splat materials.</p>
+<h3 id="splats-look-unsorted-in-the-game-view-while-editing">Splats look unsorted in the Game view while editing<a class="headerlink" href="#splats-look-unsorted-in-the-game-view-while-editing" title="Permanent link">&para;</a></h3>
+<p>In the Unity editor, splats are sorted for only one camera at a time:</p>
+<ul>
+<li><strong>Outside Play mode</strong>, splats are sorted for the Scene view camera. They look correct in the Scene view but can look unsorted in the Game view, with back splats drawn over front ones.</li>
+<li><strong>In Play mode</strong>, splats are sorted for the game camera. They look correct in the Game view but can look unsorted in the Scene view.</li>
+</ul>
+<p>This only happens in the editor. In a built app there's only the game camera, so splats sort correctly. To check how a splat will look in the build, enter Play mode and look at the Game view.</p>
 <div class="admonition warning">
 <p class="admonition-title">Camera distance and performance</p>
 <p>Avoid keeping the camera/headset extremely close to splat surfaces/objects — close proximity can cause rendering slowdowns and stuttering due to the high density of splats being processed. Maintain a reasonable viewing distance from splat objects for optimal performance.</p>
@@ -959,7 +901,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="technical-evaluation.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Technical Evaluation Suite">
+          <a href="building-blocks/blending.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Splat Blending">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -969,7 +911,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Technical Evaluation Suite
+                Splat Blending
               </div>
             </div>
           </a>

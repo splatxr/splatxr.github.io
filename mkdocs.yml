@@ -4,6 +4,8 @@ site_url: https://splatxr.github.io/docs/
 
 docs_dir: docs_src
 site_dir: docs
+exclude_docs: |
+  technical-evaluation.md
 use_directory_urls: false
 
 repo_url: https://github.com/splatxr/SplatXR
@@ -63,7 +65,8 @@ nav:
       - Splat Physics: building-blocks/physics.md
       - Splat Effects: building-blocks/effects.md
       - Splat Blending: building-blocks/blending.md
-  - Evaluation:
-      - Technical Evaluation Suite: technical-evaluation.md
+  # Hidden until the evaluation suite is released; also remove it from exclude_docs below.
+  # - Evaluation:
+  #     - Technical Evaluation Suite: technical-evaluation.md
   - Reference:
       - FAQ / Known Issues: faq.md

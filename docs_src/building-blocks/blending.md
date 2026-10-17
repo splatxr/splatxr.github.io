@@ -2,11 +2,6 @@
 
 System for creating portal effects where splat spaces can be viewed through virtual windows, blending reality with the splat spaces.
 
-<div class="tag-row" markdown>
-<span class="tag-pill">Blending layer</span>
-<span class="tag-pill">Meta SDK · Apple Vision Pro (untested)</span>
-</div>
-
 ![Splat Blending Block](../images/blending_block_editor.png)
 
 ## Purpose

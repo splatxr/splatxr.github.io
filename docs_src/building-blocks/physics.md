@@ -2,11 +2,6 @@
 
 Generates collision meshes from Gaussian splats to enable physics interactions, rigid body dynamics, and shadow casting.
 
-<div class="tag-row" markdown>
-<span class="tag-pill">Physics layer</span>
-<span class="tag-pill">Requires Splat Renderer</span>
-</div>
-
 ![Splat Physics Block](../images/physics_block_editor.png)
 
 !!! warning "Requires the meshing tool"

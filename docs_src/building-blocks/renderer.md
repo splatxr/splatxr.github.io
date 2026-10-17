@@ -2,11 +2,6 @@
 
 Core rendering component for displaying Gaussian splats with our stand-alone on-device rendering pipeline.
 
-<div class="tag-row" markdown>
-<span class="tag-pill">Rendering layer</span>
-<span class="tag-pill">Foundational block</span>
-</div>
-
 ![Splat Renderer Block](../images/renderer_block_editor.png)
 
 ## Purpose
@@ -30,6 +25,9 @@ The building block creates a parent GameObject (named after **Object Name**) wit
 
 !!! tip
     Enable "Remove Outline" in the in-editor viewer when selecting a splat object for smoother editor performance. See the [FAQ](../faq.md) for more details.
+
+!!! warning "Splats sort for one camera at a time in the editor"
+    Outside Play mode, splats are sorted for the Scene view camera, so they can look unsorted in the Game view, with back splats drawn over front ones. In Play mode it's the reverse: the Game view is sorted and the Scene view isn't. This only happens in the editor. Built apps sort splats correctly. See the [FAQ](../faq.md#splats-look-unsorted-in-the-game-view-while-editing) for more details.
 
 ### LoD distances
 

@@ -2,11 +2,6 @@
 
 Visual effects system for applying shader-based effects to Gaussian splats, including disintegration, radial reveal, and digital rain.
 
-<div class="tag-row" markdown>
-<span class="tag-pill">Effects layer</span>
-<span class="tag-pill">Requires Splat Renderer</span>
-</div>
-
 ![Splat Effects Block](../images/effects_block_editor.png)
 
 ## Purpose

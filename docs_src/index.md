@@ -3,8 +3,8 @@
 The SplatXR Toolkit provides building blocks for developing XR (AR/VR/MR) applications that integrate 3D Gaussian Splatting for rendering objects and environments, with support for physics-based interactions, visual effects, and reality blending.
 
 <div class="tag-row" markdown>
-<span class="tag-pill">v0.0.2</span>
-<span class="tag-pill">Unity 2022.0+ (tested on 6.2)</span>
+<span class="tag-pill">v0.1.0</span>
+<span class="tag-pill">Unity 2022.3+ (tested on 6.2)</span>
 </div>
 
 ## What is SplatXR?

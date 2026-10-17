@@ -1,27 +1,5 @@
 /* SplatXR homepage styles (loads after theme.css) */
 
-.sx-wip-banner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.7rem;
-  text-align: center;
-  padding: 1.1rem 1.5rem;
-  background: rgba(255, 106, 61, 0.1);
-  border-bottom: 1px solid var(--sx-border);
-  color: var(--sx-red-dark);
-  font-size: 1.05rem;
-  font-weight: 500;
-}
-
-.sx-wip-banner i { font-size: 1rem; }
-
-.sx-wip-banner strong { font-weight: 800; }
-
-@media screen and (max-width: 600px) {
-  .sx-wip-banner { flex-wrap: wrap; padding: 0.9rem 1rem; }
-}
-
 .sx-hero {
   padding: 3.5rem 1.75rem 2.5rem;
   text-align: center;

@@ -2,12 +2,12 @@
 
 1. Download the latest release of the toolkit from the [SplatXR Releases page](https://github.com/splatxr/splatxr/releases) and unzip it.
 2. Open your Unity project.
-3. Go to **Window > Package Manager**.
+3. Go to **Window > Package Management > Package Manager**.
 4. Click the **+** button in the top-left corner.
-5. Select **Add package from disk...**.
+5. Select **Install package from disk...**.
 6. Navigate to the unzipped toolkit folder and select the **package.json** file.
 7. Unity will import the package and it will appear in the Package Manager under **In Project**.
-8. Open **SplatXR > Building Blocks Panel** from the Unity menu to view the SplatXR panel.
+8. In the menu bar at the top of the Unity Editor, click **SplatXR > Building Blocks Panel** to open the SplatXR panel.
 
 <a id="meshing-tool"></a>
 

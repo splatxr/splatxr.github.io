@@ -16,7 +16,7 @@ SplatXR accelerates prototyping and research for XR experiences that leverage 3D
 - **Effects layer** — visual enhancements like disintegration and digital rain.
 - **Blending layer** — portal-like effects and compositing between virtual splat scenes and real spaces.
 
-Building blocks can be accessed through the **SplatXR Building Blocks Panel** (`SplatXR > Building Blocks Panel`) and applied to splat GameObjects individually or in combination.
+Building blocks can be accessed through the **SplatXR Building Blocks Panel** (**SplatXR > Building Blocks Panel** in the Unity Editor menu bar) and applied to splat GameObjects individually or in combination.
 
 ## Platform Support
 

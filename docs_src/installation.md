@@ -11,12 +11,12 @@
 
 <a id="meshing-tool"></a>
 
-!!! warning "Install the meshing tool"
-    The [Splat Physics](building-blocks/physics.md) building block needs the SplatXR meshing tool to generate collision meshes. The tool may already be bundled in the release: check for `splatxr_meshing.exe` (Windows) or `splatxr_meshing_mac` (macOS) in the toolkit's `SplatXRPlugin/Runtime/SplatXRBuildingBlocks/Physics` folder. If it isn't there, download the file for your platform from the [SplatXR Releases page](https://github.com/splatxr/splatxr/releases).
+!!! info "Meshing tool installation: only needed if installed from source"
+    The [Splat Physics](building-blocks/physics.md) building block needs the SplatXR meshing tool to generate collision meshes. If you installed from the release zip on the [Releases page](https://github.com/splatxr/splatxr/releases), the tool is already included and you can skip this step.
 
-    Place the downloaded file in the toolkit's `SplatXRPlugin/Runtime/SplatXRBuildingBlocks/Physics` folder, and keep its file name: `splatxr_meshing.exe` on Windows or `splatxr_meshing_mac` on macOS. You can also put it directly in your project's `Assets` folder.
+    If you installed from the source code in the GitHub repository instead, download the meshing tool for your platform from the [Releases page](https://github.com/splatxr/splatxr/releases). Place it in the toolkit's `SplatXRPlugin/Runtime/SplatXRBuildingBlocks/Physics` folder, and keep its file name: `splatxr_meshing.exe` on Windows or `splatxr_meshing_mac` on macOS. You can also put it directly in your project's `Assets` folder.
 
-    **macOS security warning:** the first time the tool runs, macOS may block it because it's from an unidentified developer. Go to **System Settings > Privacy & Security**, scroll to the message about `splatxr_meshing_mac`, and click **Open Anyway**. Then run the Splat Physics block again.
+    **macOS security warning:** however you installed, the first time the meshing tool runs, macOS may block it because it's from an unidentified developer. Go to **System Settings > Privacy & Security**, scroll to the message about `splatxr_meshing_mac`, and click **Open Anyway**. Then run the Splat Physics block again.
 
 !!! tip "Next"
     Head to the [Quickstart](quickstart.md) to import your first Gaussian splat.

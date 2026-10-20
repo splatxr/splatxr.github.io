@@ -987,10 +987,14 @@
 <td>High / Medium / Low Detail Splat</td>
 <td><em>(LoD Renderer)</em> Paths to different detail level PLY files.</td>
 </tr>
+<tr>
+<td>PLY Up Direction</td>
+<td>The axis that points up in the PLY file, used to stand the splat upright on import. Default <code>(0, -1, 0)</code> (Y-down), which fits most 3DGS/COLMAP splats. Use <code>(0, 1, 0)</code> for Y-up, <code>(0, 0, 1)</code> for Z-up, or <code>(1, 0, 0)</code> for X-up.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<p>Start with <strong>Base Renderer</strong> for single splats. Use <strong>LoD Renderer</strong> when working with large scenes where different detail levels are needed at varying distances to maintain performance. Simply import a <code>.ply</code> file and the toolkit script will create a <code>usplat</code> CSV file, which is automatically assigned to the renderer script.</p>
+<p>Start with <strong>Base Renderer</strong> for single splats. Use <strong>LoD Renderer</strong> when working with large scenes where different detail levels are needed at varying distances to maintain performance.</p>
 <p>The building block creates a parent GameObject (named after <strong>Object Name</strong>) with a <code>splat_renderer</code> child that holds the renderer component and draws the splat. Move, rotate, or scale the parent rather than the child.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1001,35 +1005,11 @@
 <p>Outside Play mode, splats are sorted for the Scene view camera, so they can look unsorted in the Game view, with back splats drawn over front ones. In Play mode it's the reverse: the Game view is sorted and the Scene view isn't. This only happens in the editor. Built apps sort splats correctly. See the <a href="../faq.html#splats-look-unsorted-in-the-game-view-while-editing">FAQ</a> for more details.</p>
 </div>
 <h3 id="lod-distances">LoD distances<a class="headerlink" href="#lod-distances" title="Permanent link">&para;</a></h3>
-<p>The LoD Renderer draws one detail level per distance band from the camera. The defaults are below; change them with <strong>Lod Distance High</strong> and <strong>Lod Distance Medium</strong> on the <code>LoDRendererSplatXR</code> component of the <code>splat_renderer</code> child.</p>
-<table>
-<thead>
-<tr>
-<th>Distance from camera</th>
-<th>Detail level</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Up to 2 m</td>
-<td>High</td>
-</tr>
-<tr>
-<td>2 m – 5 m</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td>Beyond 5 m</td>
-<td>Low</td>
-</tr>
-</tbody>
-</table>
+<p>The LoD Renderer draws one detail level per distance band from the camera. By default, it draws High up to 2 m away, Medium from 2 m to 5 m, and Low beyond 5 m. Change these distances with <strong>Lod Distance High</strong> and <strong>Lod Distance Medium</strong> on the <code>LoDRendererSplatXR</code> component of the <code>splat_renderer</code> child.</p>
 <p>You don't need all three files. If a level has no file, its band falls back to the next coarser level that has one, then to a finer one. For example, with only High and Low assigned, the 2–5 m band uses Low. Removing a file from a level in the Inspector stops that level from rendering.</p>
+<p>To see which level is drawn where, turn on <strong>Enable LOD Debug Coloring</strong> on the same component. High-detail splats keep their colors, medium-detail splats are tinted blue, and low-detail splats are tinted red.</p>
 <h3 id="splat-file-format">Splat file format<a class="headerlink" href="#splat-file-format" title="Permanent link">&para;</a></h3>
-<p>The <code>usplat</code> CSV has a header line, then one splat per line with 13 comma-separated numbers:</p>
-<div class="highlight"><pre><span></span><code>x,y,z,opacity,f_dc_0,f_dc_1,f_dc_2,cov0,cov1,cov2,cov3,cov4,cov5
-</code></pre></div>
-<p>Lines with fewer than 13 columns or non-numeric values are skipped, and the rest of the file still loads. The Console shows a warning with the number of skipped lines and the first one's line number.</p>
+<p>The toolkit converts each <code>.ply</code> into a <code>usplat</code> CSV file in <code>Assets/Resources/Usplats</code> and assigns it to the renderer. Each line holds one splat's position, opacity, color, and covariance. Malformed lines are skipped with a warning in the Console.</p>
 <h2 id="material-and-color-controls">Material and Color Controls<a class="headerlink" href="#material-and-color-controls" title="Permanent link">&para;</a></h2>
 <p>Each splat gets its own material, saved as <code>Assets/Materials/SplatMaterials/SplatMaterial_&lt;Object Name&gt;.mat</code> and assigned to the <code>splat_renderer</code> child. It uses the <code>SplatXR/SplatShader</code> shader. Editing it changes only that splat, and the original splat file isn't modified.</p>
 <p>Select the material (or the <code>splat_renderer</code> child) to adjust its photometric properties in the Inspector: <strong>Color Tint</strong>, <strong>Brightness</strong>, <strong>Contrast</strong>, <strong>Saturation</strong>, <strong>Temperature</strong> (cool to warm), and <strong>Transparency</strong>. <strong>Scale Factor</strong> scales the splat's size. At their defaults (white tint, <code>0</code> temperature, everything else <code>1</code>), the splat looks unchanged.</p>
@@ -1055,15 +1035,10 @@
 </div>
 <p>The component compares the mean and spread of each color channel (R, G, B) in the two images and computes an <a href="https://en.wikipedia.org/wiki/ASC_CDL">ASC CDL</a> correction (slope, offset, and power) that maps the splat image's colors onto the passthrough image's. Values are clamped to a safe range so a mismatched image pair can't blow out the splat.</p>
 <h4 id="how-the-material-is-updated">How the material is updated<a class="headerlink" href="#how-the-material-is-updated" title="Permanent link">&para;</a></h4>
-<p>The correction is stored on the material, not in the splat file. <strong>Apply Color Correction</strong> writes the results to the material's <strong>ASC CDL Color Correction</strong> properties (<strong>ASC-CDL Slope</strong>, <strong>ASC-CDL Offset</strong>, and <strong>ASC-CDL Power</strong>), sets <strong>Enable ASC-CDL</strong> to <code>1</code>, and saves the material asset. Because the values live on the material:</p>
-<ul>
-<li>The correction stays applied after you leave Play mode and in builds, even if you disable or remove the component.</li>
-<li>You can undo it with <strong>Ctrl+Z</strong> (<strong>Cmd+Z</strong> on macOS).</li>
-<li>You can fine-tune it on top with the color controls above, since the shader applies the correction first.</li>
-</ul>
+<p>The correction is stored on the material, not in the splat file. <strong>Apply Color Correction</strong> writes the results to the material's <strong>ASC CDL Color Correction</strong> properties (<strong>ASC-CDL Slope</strong>, <strong>ASC-CDL Offset</strong>, and <strong>ASC-CDL Power</strong>), sets <strong>Enable ASC-CDL</strong> to <code>1</code>, and saves the material asset. Because the values live on the material, the correction stays applied after you leave Play mode and in builds, even if you disable or remove the component. You can undo it with <strong>Ctrl+Z</strong> (<strong>Cmd+Z</strong> on macOS), or fine-tune it with the color controls above, since the shader applies the correction first.</p>
 <p>To compare with and without the correction, set <strong>Enable ASC-CDL</strong> on the material to <code>0</code> (off) or <code>1</code> (on). This keeps the computed values. <strong>Reset Color Correction</strong> in the component returns slope, offset, and power to neutral and turns <strong>Enable ASC-CDL</strong> off.</p>
 <h2 id="cropping">Cropping<a class="headerlink" href="#cropping" title="Permanent link">&para;</a></h2>
-<p>Cropping hides splats outside a box, which is useful for removing background clutter or floaters around a captured object. Open the <strong>Cropping Controls</strong> foldout on the renderer component on the <code>splat_renderer</code> child:</p>
+<p>Cropping hides splats outside a box, which is useful for segmenting an object from the rest of a capture. Open the <strong>Cropping Controls</strong> foldout on the renderer component on the <code>splat_renderer</code> child:</p>
 <table>
 <thead>
 <tr>
@@ -1090,7 +1065,7 @@
 </tr>
 </tbody>
 </table>
-<p>Only splats inside the box are drawn, and the splat updates as soon as you change the box. Cropping doesn't change the splat file, so turning it off brings every splat back. It works with both the Base and LoD Renderers.</p>
+<p>Only splats inside the box are drawn, and the splat updates as soon as you change the box. Cropping doesn't change the splat file, so turning it off brings every splat back.</p>
 
 
 

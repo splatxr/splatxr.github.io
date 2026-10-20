@@ -21,7 +21,7 @@ Add this building block to the parent splat GameObject to create dynamic visual 
 <video autoplay muted loop playsinline aria-label="Digital Rain effect: green splats rain down and assemble into a room">
 <source src="../videos/effects_digital_rain.mp4" type="video/mp4">
 </video>
-<figcaption><strong>Digital Rain</strong>: splats rain down and assemble into a room.</figcaption>
+<figcaption><strong>Digital Rain</strong>: splats rain down and assemble, inspired by the falling code in <em>The Matrix</em>.</figcaption>
 </figure>
 </div>
 
@@ -35,13 +35,16 @@ Add this building block to the parent splat GameObject to create dynamic visual 
 
 ## Usage
 
-The block swaps the shader on the `splat_renderer` child's material for the effect shader, and adds a `SplatEffectsBuildingBlock` component to the parent object. The effect starts off.
+The block swaps the shader on the `splat_renderer` child's material for the effect shader, and adds a `SplatEffectsBuildingBlock` component to the parent object.
+
+!!! note "Turn on the effect"
+    **Is Effect Active** is off by default, so the effect won't play until you check it. Select the splat's parent object and check **Is Effect Active** on the `SplatEffectsBuildingBlock` component in the Inspector.
 
 Each effect runs across a timeline from `0` to `1`. Control it from the `SplatEffectsBuildingBlock` component in the Inspector:
 
 | Field | Description |
 | --- | --- |
-| Is Effect Active | Turn on to play the effect, off to stop it. |
+| Is Effect Active | Turn on to play the effect, off to stop it. Off by default. |
 | Time Multiplier | Playback speed. At `1`, the effect takes 1 second from start to end. |
 | Loop Effect | Restart from `0` after reaching `1`. Otherwise the effect holds at `1`. |
 

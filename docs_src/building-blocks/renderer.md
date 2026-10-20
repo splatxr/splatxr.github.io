@@ -16,10 +16,11 @@ This is the foundational building block for splat rendering. Maximum recommended
 | Renderer | Choose between **Base Renderer** (single PLY file) or **LoD Renderer** (multiple detail levels for distance-based optimization). |
 | Input Splat File (PLY) | *(Base Renderer)* Path to the splat `.ply` file. |
 | High / Medium / Low Detail Splat | *(LoD Renderer)* Paths to different detail level PLY files. |
+| PLY Up Direction | The axis that points up in the PLY file, used to stand the splat upright on import. Default `(0, -1, 0)` (Y-down), which fits most 3DGS/COLMAP splats. Use `(0, 1, 0)` for Y-up, `(0, 0, 1)` for Z-up, or `(1, 0, 0)` for X-up. |
 
 ## Usage
 
-Start with **Base Renderer** for single splats. Use **LoD Renderer** when working with large scenes where different detail levels are needed at varying distances to maintain performance. Simply import a `.ply` file and the toolkit script will create a `usplat` CSV file, which is automatically assigned to the renderer script.
+Start with **Base Renderer** for single splats. Use **LoD Renderer** when working with large scenes where different detail levels are needed at varying distances to maintain performance.
 
 The building block creates a parent GameObject (named after **Object Name**) with a `splat_renderer` child that holds the renderer component and draws the splat. Move, rotate, or scale the parent rather than the child.
 
@@ -31,25 +32,15 @@ The building block creates a parent GameObject (named after **Object Name**) wit
 
 ### LoD distances
 
-The LoD Renderer draws one detail level per distance band from the camera. The defaults are below; change them with **Lod Distance High** and **Lod Distance Medium** on the `LoDRendererSplatXR` component of the `splat_renderer` child.
-
-| Distance from camera | Detail level |
-| --- | --- |
-| Up to 2 m | High |
-| 2 m – 5 m | Medium |
-| Beyond 5 m | Low |
+The LoD Renderer draws one detail level per distance band from the camera. By default, it draws High up to 2 m away, Medium from 2 m to 5 m, and Low beyond 5 m. Change these distances with **Lod Distance High** and **Lod Distance Medium** on the `LoDRendererSplatXR` component of the `splat_renderer` child.
 
 You don't need all three files. If a level has no file, its band falls back to the next coarser level that has one, then to a finer one. For example, with only High and Low assigned, the 2–5 m band uses Low. Removing a file from a level in the Inspector stops that level from rendering.
 
+To see which level is drawn where, turn on **Enable LOD Debug Coloring** on the same component. High-detail splats keep their colors, medium-detail splats are tinted blue, and low-detail splats are tinted red.
+
 ### Splat file format
 
-The `usplat` CSV has a header line, then one splat per line with 13 comma-separated numbers:
-
-```text
-x,y,z,opacity,f_dc_0,f_dc_1,f_dc_2,cov0,cov1,cov2,cov3,cov4,cov5
-```
-
-Lines with fewer than 13 columns or non-numeric values are skipped, and the rest of the file still loads. The Console shows a warning with the number of skipped lines and the first one's line number.
+The toolkit converts each `.ply` into a `usplat` CSV file in `Assets/Resources/Usplats` and assigns it to the renderer. Each line holds one splat's position, opacity, color, and covariance. Malformed lines are skipped with a warning in the Console.
 
 ## Material and Color Controls
 
@@ -83,17 +74,13 @@ The component compares the mean and spread of each color channel (R, G, B) in th
 
 #### How the material is updated
 
-The correction is stored on the material, not in the splat file. **Apply Color Correction** writes the results to the material's **ASC CDL Color Correction** properties (**ASC-CDL Slope**, **ASC-CDL Offset**, and **ASC-CDL Power**), sets **Enable ASC-CDL** to `1`, and saves the material asset. Because the values live on the material:
-
-- The correction stays applied after you leave Play mode and in builds, even if you disable or remove the component.
-- You can undo it with **Ctrl+Z** (**Cmd+Z** on macOS).
-- You can fine-tune it on top with the color controls above, since the shader applies the correction first.
+The correction is stored on the material, not in the splat file. **Apply Color Correction** writes the results to the material's **ASC CDL Color Correction** properties (**ASC-CDL Slope**, **ASC-CDL Offset**, and **ASC-CDL Power**), sets **Enable ASC-CDL** to `1`, and saves the material asset. Because the values live on the material, the correction stays applied after you leave Play mode and in builds, even if you disable or remove the component. You can undo it with **Ctrl+Z** (**Cmd+Z** on macOS), or fine-tune it with the color controls above, since the shader applies the correction first.
 
 To compare with and without the correction, set **Enable ASC-CDL** on the material to `0` (off) or `1` (on). This keeps the computed values. **Reset Color Correction** in the component returns slope, offset, and power to neutral and turns **Enable ASC-CDL** off.
 
 ## Cropping
 
-Cropping hides splats outside a box, which is useful for removing background clutter or floaters around a captured object. Open the **Cropping Controls** foldout on the renderer component on the `splat_renderer` child:
+Cropping hides splats outside a box, which is useful for segmenting an object from the rest of a capture. Open the **Cropping Controls** foldout on the renderer component on the `splat_renderer` child:
 
 | Field | Description |
 | --- | --- |
@@ -102,4 +89,4 @@ Cropping hides splats outside a box, which is useful for removing background clu
 | Crop Bounds Rotation | Rotation of the crop box, in degrees. |
 | Show Crop Bounds | Draw the crop box as a yellow wireframe in the Scene view (while cropping is on). |
 
-Only splats inside the box are drawn, and the splat updates as soon as you change the box. Cropping doesn't change the splat file, so turning it off brings every splat back. It works with both the Base and LoD Renderers.
+Only splats inside the box are drawn, and the splat updates as soon as you change the box. Cropping doesn't change the splat file, so turning it off brings every splat back.

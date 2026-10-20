@@ -843,7 +843,7 @@
 <tbody>
 <tr>
 <td>XR Platform</td>
-<td>Choose <strong>Meta SDK</strong> or <strong>Apple Vision Pro</strong>. Apple Vision Pro is untested, and only fully immersive (Metal) apps are expected to work.</td>
+<td>Choose <strong>Meta SDK</strong> or <strong>Other</strong>. Blending on platforms other than Meta SDK is untested. On Apple Vision Pro, only fully immersive (Metal) apps are expected to work.</td>
 </tr>
 <tr>
 <td>Center Eye Camera</td>
@@ -854,11 +854,11 @@
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>The block:</p>
 <ol>
-<li>Adds a <code>MetaSplatBlendingPortal</code> object to the scene, with a sample portal plane that uses the Blending Portal material.</li>
+<li>Adds a <code>SplatBlendingPortal</code> object to the scene, with a sample portal plane that uses the Blending Portal material.</li>
 <li>Adds <code>LeftEyeBlending</code> and <code>RightEyeBlending</code> cameras under the center eye camera.</li>
 <li>Creates a <code>"BlendingWorld"</code> layer if it doesn't exist. The left and right eye cameras render only that layer, and the center eye camera stops rendering it.</li>
 </ol>
-<p>Objects on the <code>"BlendingWorld"</code> layer are only visible through the portal. Put everything you want seen through the portal, such as a splat space, on that layer. To make your own portal window, apply the Blending Portal material to any mesh.</p>
+<p>Objects on the <code>"BlendingWorld"</code> layer are only visible through the portal. Put everything you want seen through the portal, such as a splat space, on that layer. To make your own portal window, apply the Blending Portal material to any mesh. This also works on volumes such as 3D objects, not just flat planes: apply the material to a cube or sphere, for example, to see the splat space through the object's surface.</p>
 <p>Adding the block again with the same center eye camera reuses the existing portal and eye cameras instead of creating duplicates. There is a controllable <strong>Edge Softness</strong> parameter in the material shader to create a vignette effect along the border of the portal window.</p>
 
 

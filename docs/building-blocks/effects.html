@@ -862,7 +862,7 @@
 <video autoplay muted loop playsinline aria-label="Digital Rain effect: green splats rain down and assemble into a room">
 <source src="../videos/effects_digital_rain.mp4" type="video/mp4">
 </video>
-<figcaption><strong>Digital Rain</strong>: splats rain down and assemble into a room.</figcaption>
+<figcaption><strong>Digital Rain</strong>: splats rain down and assemble, inspired by the falling code in <em>The Matrix</em>.</figcaption>
 </figure>
 </div>
 
@@ -890,7 +890,11 @@
 </tbody>
 </table>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<p>The block swaps the shader on the <code>splat_renderer</code> child's material for the effect shader, and adds a <code>SplatEffectsBuildingBlock</code> component to the parent object. The effect starts off.</p>
+<p>The block swaps the shader on the <code>splat_renderer</code> child's material for the effect shader, and adds a <code>SplatEffectsBuildingBlock</code> component to the parent object.</p>
+<div class="admonition note">
+<p class="admonition-title">Turn on the effect</p>
+<p><strong>Is Effect Active</strong> is off by default, so the effect won't play until you check it. Select the splat's parent object and check <strong>Is Effect Active</strong> on the <code>SplatEffectsBuildingBlock</code> component in the Inspector.</p>
+</div>
 <p>Each effect runs across a timeline from <code>0</code> to <code>1</code>. Control it from the <code>SplatEffectsBuildingBlock</code> component in the Inspector:</p>
 <table>
 <thead>
@@ -902,7 +906,7 @@
 <tbody>
 <tr>
 <td>Is Effect Active</td>
-<td>Turn on to play the effect, off to stop it.</td>
+<td>Turn on to play the effect, off to stop it. Off by default.</td>
 </tr>
 <tr>
 <td>Time Multiplier</td>

@@ -9,12 +9,12 @@ The SplatXR Toolkit provides building blocks for developing XR (AR/VR/MR) applic
 
 ## What is SplatXR?
 
-SplatXR accelerates prototyping and research for XR experiences that leverage 3D Gaussian Splatting (3DGS) for immersive, interactive spaces. It's built around a **modular building block system** spanning four layers of a multi-layer reality framework:
+SplatXR accelerates prototyping and research for XR experiences that use 3D Gaussian Splatting (3DGS). It's built around four modular **building blocks**:
 
-- **Rendering layer** — GPU-optimized, on-headset visualization of Gaussian splats.
-- **Physics layer** — collision detection and physical interaction through mesh-augmented splats.
-- **Effects layer** — visual enhancements like disintegration and digital rain.
-- **Blending layer** — portal-like effects and compositing between virtual splat scenes and real spaces.
+- **Splat Renderer**: GPU-optimized, on-headset visualization of Gaussian splats.
+- **Splat Physics**: collision detection and physical interaction through mesh-augmented splats.
+- **Splat Effects**: visual effects like disintegration and digital rain.
+- **Splat Blending**: portal-like effects and compositing between virtual splat scenes and real spaces.
 
 Building blocks can be accessed through the **SplatXR Building Blocks Panel** (**SplatXR > Building Blocks Panel** in the Unity Editor menu bar) and applied to splat GameObjects individually or in combination.
 
@@ -41,7 +41,7 @@ SplatXR primarily targets and is developed for the **Meta Quest 3**. It has also
 
     ---
 
-    Import your first Gaussian splat in five minutes.
+    Import your first Gaussian splat.
 
 -   **[FAQ / Known Issues](faq.md)**
 

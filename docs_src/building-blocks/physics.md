@@ -5,7 +5,9 @@ Generates collision meshes from Gaussian splats to enable physics interactions, 
 ![Splat Physics Block](../images/physics_block_editor.png)
 
 !!! warning "Requires the meshing tool"
-    This building block needs the SplatXR meshing tool. It may be bundled in the release; if not, see [Installation](../installation.md#meshing-tool) for the macOS and Windows downloads.
+    This building block needs the SplatXR meshing tool. It's included in the release zip. If you installed from the GitHub source instead, see [Installation](../installation.md#meshing-tool) to download it.
+
+    **macOS:** the first time the tool runs, macOS may block it because it's from an unidentified developer. Go to **System Settings > Privacy & Security**, scroll to the message about `splatxr_meshing_mac`, and click **Open Anyway**. Then run the Splat Physics block again.
 
 ## Purpose
 
@@ -27,7 +29,6 @@ Apply this building block to an existing splat renderer object when you need col
 
 **Object** meshing creates more detailed meshes suitable for interactive props, while **Space** meshing creates simplified meshes for environment boundaries.
 
-The physics mesh, collider, and Rigidbody go on the splat's parent object, not on the `splat_renderer` child that draws it. Adding a mesh to the child would replace the splat's own mesh and hide it. If you select the child, the block moves the physics to its parent and logs a message. If the selected object draws the splat and has no parent, the block shows an error instead. In that case, recreate the splat with the Splat Renderer building block.
-
+The physics mesh, collider, and Rigidbody go on the splat's parent object, not on the `splat_renderer` child that draws it.
 !!! warning "Known limitation"
     Scene-based meshing (Splat Type: Space) may not produce highly detailed meshes. For objects requiring detailed collision meshes, use Splat Type: Object instead. See the [FAQ](../faq.md).

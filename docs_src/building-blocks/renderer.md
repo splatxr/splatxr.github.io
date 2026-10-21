@@ -2,7 +2,11 @@
 
 Core rendering component for displaying Gaussian splats with our stand-alone on-device rendering pipeline.
 
-![Splat Renderer Block](../images/renderer_block_editor.png)
+<div class="image-grid" markdown>
+[![Splat Renderer block in the Unity Editor, rendering a LEGO bulldozer splat](../images/splat_renderer_editor.jpg)](../images/splat_renderer_editor.jpg)
+
+[![Splat Renderer block in the Unity Editor, rendering a library scene splat](../images/splat_renderer_library.jpg)](../images/splat_renderer_library.jpg)
+</div>
 
 ## Purpose
 
@@ -81,6 +85,8 @@ To compare with and without the correction, set **Enable ASC-CDL** on the materi
 ## Cropping
 
 Cropping hides splats outside a box, which is useful for segmenting an object from the rest of a capture. Open the **Cropping Controls** foldout on the renderer component on the `splat_renderer` child:
+
+![Cropping Controls in the Inspector, cropping a motorcycle splat](../images/splat_cropping.jpg)
 
 | Field | Description |
 | --- | --- |

@@ -93,6 +93,45 @@
   text-align: left;
 }
 
+/* Rounded corners on the Unity Editor screenshots */
+.md-typeset img[src*="_editor"],
+.md-typeset img[src*="splat_cropping"],
+.md-typeset img[src*="splat_renderer_library"] {
+  border-radius: 0.5rem;
+}
+
+/* Cropping screenshot on the Splat Renderer page: smaller and centered */
+.md-typeset img[src*="splat_cropping"] {
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* Side-by-side screenshots (e.g. Splat Renderer page); stacks on narrow screens */
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  max-width: 100%;
+  margin: 1rem auto 1.5rem;
+}
+
+@media screen and (max-width: 30em) {
+  .image-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+}
+
+.image-grid p {
+  margin: 0;
+}
+
+.image-grid img {
+  display: block;
+  width: 100%;
+}
+
 /* Greyed-out button for links that aren't available yet (e.g. unreleased repos) */
 .md-typeset .md-button--disabled,
 .md-typeset .md-button--disabled:hover {

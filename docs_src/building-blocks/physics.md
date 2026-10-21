@@ -2,7 +2,7 @@
 
 Generates collision meshes from Gaussian splats to enable physics interactions, rigid body dynamics, and shadow casting.
 
-![Splat Physics Block](../images/physics_block_editor.png)
+![Splat Physics block in the Unity Editor, with a generated collision mesh around a bonsai splat](../images/splat_physics_editor.jpg)
 
 !!! warning "Requires the meshing tool"
     This building block needs the SplatXR meshing tool. It's included in the release zip. If you installed from the GitHub source instead, see [Installation](../installation.md#meshing-tool) to download it.

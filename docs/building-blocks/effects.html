@@ -847,7 +847,7 @@
 
 <h1 id="splat-effects">Splat Effects<a class="headerlink" href="#splat-effects" title="Permanent link">&para;</a></h1>
 <p>Visual effects system for applying shader-based effects to Gaussian splats, including disintegration, radial reveal, and digital rain.</p>
-<p><img alt="Splat Effects Block" src="../images/effects_block_editor.png" /></p>
+<p><img alt="Splat Effects block in the Unity Editor, applying Radial Reveal to a botanical garden splat" src="../images/splat_effects_editor.jpg" /></p>
 <h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
 <p>Add this building block to the parent splat GameObject to create dynamic visual effects. Useful for transitions, interactions, or stylized appearances.</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
@@ -925,7 +925,14 @@
 <li><code>_EffectActive</code>: <code>1</code> while the effect is playing, otherwise <code>0</code>.</li>
 <li><code>_EffectTime</code>: the current position on the <code>0</code>–<code>1</code> timeline.</li>
 </ul>
-<p>Start from one of the built-in shaders in <code>Runtime/SplatXRBuildingBlocks/Effects/Shaders</code> so your shader keeps the splat rendering code.</p>
+<p>The easiest way to start is the template generator in the Splat Effects panel:</p>
+<ol>
+<li>Expand <strong>Create Custom Shader Effect</strong> in the Splat Effects building block.</li>
+<li>Enter a <strong>Shader Name</strong> for your effect.</li>
+<li>Click <strong>Create Custom Shader Effect</strong>.</li>
+</ol>
+<p>This creates a template shader at <code>Assets/Materials/SplatShaders/SplatEffect_&lt;name&gt;.shader</code> and selects it as the <strong>Custom Shader</strong>. The template already includes the splat rendering code and the <code>_EffectActive</code> and <code>_EffectTime</code> properties. Edit the sections marked <code>YOUR EFFECT GOES HERE</code> to add your effect, then click <strong>Add to Splat</strong>.</p>
+<p>You can also start from one of the built-in shaders in <code>Runtime/SplatXRBuildingBlocks/Effects/Shaders</code>, so your shader keeps the splat rendering code.</p>
 
 
 

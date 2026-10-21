@@ -791,7 +791,7 @@
 
 <h1 id="splat-physics">Splat Physics<a class="headerlink" href="#splat-physics" title="Permanent link">&para;</a></h1>
 <p>Generates collision meshes from Gaussian splats to enable physics interactions, rigid body dynamics, and shadow casting.</p>
-<p><img alt="Splat Physics Block" src="../images/physics_block_editor.png" /></p>
+<p><img alt="Splat Physics block in the Unity Editor, with a generated collision mesh around a bonsai splat" src="../images/splat_physics_editor.jpg" /></p>
 <div class="admonition warning">
 <p class="admonition-title">Requires the meshing tool</p>
 <p>This building block needs the SplatXR meshing tool. It's included in the release zip. If you installed from the GitHub source instead, see <a href="../installation.html#meshing-tool">Installation</a> to download it.</p>
@@ -826,11 +826,11 @@
 </tr>
 <tr>
 <td>Mesh Base Flattening</td>
-<td>Enable to flatten the bottom of the mesh (useful for placing objects on surfaces).</td>
+<td><em>(Object type)</em> Enable to flatten the bottom of the mesh (useful for placing objects on surfaces).</td>
 </tr>
 <tr>
 <td>Flatten Percentage</td>
-<td><em>(If flattening enabled)</em> Amount to flatten. Range 0–1, default <code>0.05</code>.</td>
+<td><em>(If flattening enabled)</em> Percentage of the mesh to flatten from the base. Must be greater than 0 and less than 100, default <code>5</code>.</td>
 </tr>
 <tr>
 <td>Flatten Axis</td>

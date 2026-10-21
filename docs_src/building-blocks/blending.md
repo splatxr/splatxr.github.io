@@ -2,7 +2,7 @@
 
 System for creating portal effects where splat spaces can be viewed through virtual windows, blending reality with the splat spaces.
 
-![Splat Blending Block](../images/blending_block_editor.png)
+![Splat Blending block in the Unity Editor, with a portal window in a lighthouse splat scene](../images/splat_blending_editor.jpg)
 
 ## Purpose
 

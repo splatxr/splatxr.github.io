@@ -840,7 +840,7 @@
 </ul>
 <p>The limitation is primarily the number/FOV/layering of visible splats in a scene's rendered view.</p>
 <h3 id="possible-slow-down-in-in-editor-viewing">Possible slow-down in in-editor viewing<a class="headerlink" href="#possible-slow-down-in-in-editor-viewing" title="Permanent link">&para;</a></h3>
-<p>When viewing splats in the Unity editor, it's recommended to enable the <strong>"Remove Outline"</strong> option in the in-editor viewer for better rendering performance while selecting the splat in the editor.</p>
+<p>Unity's selection outline can slow down the editor while a splat is selected. For <strong>Base Renderer</strong> splats, the toolkit turns the outline off automatically while the splat is selected and restores it afterwards. For <strong>LoD Renderer</strong> splats, turn it off yourself: in the Scene view, open the <strong>Gizmos</strong> menu and uncheck <strong>Selection Outline</strong>.</p>
 <h3 id="scene-based-meshing-detail">Scene-based meshing detail<a class="headerlink" href="#scene-based-meshing-detail" title="Permanent link">&para;</a></h3>
 <p>Scene-based meshing (when using Splat Type: <strong>Space</strong> in physics generation) may not produce highly detailed meshes. For objects requiring detailed collision meshes, use Splat Type: <strong>Object</strong> instead.</p>
 <h3 id="splats-drawing-in-the-wrong-order">Splats drawing in the wrong order<a class="headerlink" href="#splats-drawing-in-the-wrong-order" title="Permanent link">&para;</a></h3>

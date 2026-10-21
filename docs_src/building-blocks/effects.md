@@ -2,7 +2,7 @@
 
 Visual effects system for applying shader-based effects to Gaussian splats, including disintegration, radial reveal, and digital rain.
 
-![Splat Effects Block](../images/effects_block_editor.png)
+![Splat Effects block in the Unity Editor, applying Radial Reveal to a botanical garden splat](../images/splat_effects_editor.jpg)
 
 ## Purpose
 

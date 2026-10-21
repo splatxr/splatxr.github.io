@@ -14,7 +14,7 @@
 !!! info "Meshing tool installation: only needed if installed from source"
     The [Splat Physics](building-blocks/physics.md) building block needs the SplatXR meshing tool to generate collision meshes. If you installed from the release zip on the [Releases page](https://github.com/splatxr/splatxr/releases), the tool is already included and you can skip this step.
 
-    If you installed from the source code in the GitHub repository instead, download the meshing tool for your platform from the [Releases page](https://github.com/splatxr/splatxr/releases). Place it in the toolkit's `SplatXRPlugin/Runtime/SplatXRBuildingBlocks/Physics` folder, and keep its file name: `splatxr_meshing.exe` on Windows or `splatxr_meshing_mac` on macOS. You can also put it directly in your project's `Assets` folder.
+    If you installed from the source code in the GitHub repository instead, download the meshing tool for your platform from the [Releases page](https://github.com/splatxr/splatxr/releases). Place it in the toolkit's `SplatXRToolkit/Runtime/SplatXRBuildingBlocks/Physics` folder, and keep its file name: `splatxr_meshing.exe` on Windows or `splatxr_meshing_mac` on macOS. You can also put it directly in your project's `Assets` folder.
 
     **macOS security warning:** however you installed, the first time the meshing tool runs, macOS may block it because it's from an unidentified developer. Go to **System Settings > Privacy & Security**, scroll to the message about `splatxr_meshing_mac`, and click **Open Anyway**. Then run the Splat Physics block again.
 

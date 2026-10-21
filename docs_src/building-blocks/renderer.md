@@ -25,7 +25,7 @@ Start with **Base Renderer** for single splats. Use **LoD Renderer** when workin
 The building block creates a parent GameObject (named after **Object Name**) with a `splat_renderer` child that holds the renderer component and draws the splat. Move, rotate, or scale the parent rather than the child.
 
 !!! tip
-    Enable "Remove Outline" in the in-editor viewer when selecting a splat object for smoother editor performance. See the [FAQ](../faq.md) for more details.
+    If the editor slows down while an LoD Renderer splat is selected, turn off **Gizmos > Selection Outline** in the Scene view. Base Renderer splats turn the outline off automatically while selected. See the [FAQ](../faq.md#possible-slow-down-in-in-editor-viewing) for more details.
 
 !!! warning "Splats sort for one camera at a time in the editor"
     Outside Play mode, splats are sorted for the Scene view camera, so they can look unsorted in the Game view, with back splats drawn over front ones. In Play mode it's the reverse: the Game view is sorted and the Scene view isn't. This only happens in the editor. Built apps sort splats correctly. See the [FAQ](../faq.md#splats-look-unsorted-in-the-game-view-while-editing) for more details.

@@ -57,4 +57,12 @@ Each frame the component sets two material properties, which your shader should 
 - `_EffectActive`: `1` while the effect is playing, otherwise `0`.
 - `_EffectTime`: the current position on the `0`–`1` timeline.
 
-Start from one of the built-in shaders in `Runtime/SplatXRBuildingBlocks/Effects/Shaders` so your shader keeps the splat rendering code.
+The easiest way to start is the template generator in the Splat Effects panel:
+
+1. Expand **Create Custom Shader Effect** in the Splat Effects building block.
+2. Enter a **Shader Name** for your effect.
+3. Click **Create Custom Shader Effect**.
+
+This creates a template shader at `Assets/Materials/SplatShaders/SplatEffect_<name>.shader` and selects it as the **Custom Shader**. The template already includes the splat rendering code and the `_EffectActive` and `_EffectTime` properties. Edit the sections marked `YOUR EFFECT GOES HERE` to add your effect, then click **Add to Splat**.
+
+You can also start from one of the built-in shaders in `Runtime/SplatXRBuildingBlocks/Effects/Shaders`, so your shader keeps the splat rendering code.

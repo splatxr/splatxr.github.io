@@ -21,8 +21,8 @@ Apply this building block to an existing splat renderer object when you need col
 | Splat Type | **Object** (detailed mesh for props/items) or **Space** (simplified mesh for rooms/environments). |
 | Mesh Threshold | *(Object type)* Density threshold for mesh generation. Range 0–1, default `0.5`. |
 | Gaussian Mesh Scale | *(Object type)* Scale factor for individual gaussians during meshing. Larger values help for sparser gaussians. Range 0–2, default `1.5`. |
-| Mesh Base Flattening | Enable to flatten the bottom of the mesh (useful for placing objects on surfaces). |
-| Flatten Percentage | *(If flattening enabled)* Amount to flatten. Range 0–1, default `0.05`. |
+| Mesh Base Flattening | *(Object type)* Enable to flatten the bottom of the mesh (useful for placing objects on surfaces). |
+| Flatten Percentage | *(If flattening enabled)* Percentage of the mesh to flatten from the base. Must be greater than 0 and less than 100, default `5`. |
 | Flatten Axis | *(If flattening enabled)* Axis direction for flattening, generally the base (`X`, `Y`, `Z`, `-X`, `-Y`, `-Z`). |
 
 ## Usage

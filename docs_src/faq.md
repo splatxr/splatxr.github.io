@@ -11,7 +11,7 @@ The limitation is primarily the number/FOV/layering of visible splats in a scene
 
 ### Possible slow-down in in-editor viewing
 
-When viewing splats in the Unity editor, it's recommended to enable the **"Remove Outline"** option in the in-editor viewer for better rendering performance while selecting the splat in the editor.
+Unity's selection outline can slow down the editor while a splat is selected. For **Base Renderer** splats, the toolkit turns the outline off automatically while the splat is selected and restores it afterwards. For **LoD Renderer** splats, turn it off yourself: in the Scene view, open the **Gizmos** menu and uncheck **Selection Outline**.
 
 ### Scene-based meshing detail
 

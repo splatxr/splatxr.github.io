@@ -93,6 +93,12 @@ We welcome contributions from the community! Technical support and maintenance f
 
 Head over to the [SplatXR repository](https://github.com/splatxr/SplatXR) to open an issue, start a discussion, or submit a pull request.
 
+## License
+
+The SplatXR Toolkit is released under the [MIT License](https://github.com/splatxr/SplatXR/blob/main/LICENSE).
+
+Portions of the splat shaders are adapted from [GaussianSplats3D](https://github.com/mkkellogg/GaussianSplats3D) by Mark Kellogg (MIT License). See [THIRD_PARTY_NOTICES.md](https://github.com/splatxr/SplatXR/blob/main/THIRD_PARTY_NOTICES.md).
+
 ## Citation
 
 If you use the SplatXR Toolkit in your research, please cite our [paper](https://splatxr.github.io/static/paper/splatxr_uist26_paper.pdf):
